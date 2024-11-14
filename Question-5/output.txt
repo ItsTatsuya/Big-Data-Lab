@@ -1,0 +1,10 @@
+12	
+23	
+34	
+45	
+67	
+apple	
+banana	
+mango	
+orange	
+zebra	

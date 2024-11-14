@@ -1,7 +1,11 @@
 # Big Data Lab
 
-different output directory name each time or add a timestamp to make it unique:
+Apache Hadoop Programs for Big Data Lab
 
-```
-hadoop jar <jarfilename>.jar <functionname> <input>.txt output_$(date +%Y%m%d_%H%M%S)
-```
+## Table of Contents
+
+- [Question 2](/Question-2/)
+- [Question 3](/Question-3/)
+- [Question 4](/Question-4/)
+- [Question 5](/Question-5/)
+- [Question 6](/Question-6/)
