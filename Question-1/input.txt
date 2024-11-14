@@ -1,0 +1,5 @@
+Hadoop is a framework for distributed storage and processing of big data.
+Hadoop uses the MapReduce programming model.
+MapReduce is a computational model.
+In Hadoop, data is processed using MapReduce.
+MapReduce is highly scalable and efficient.
