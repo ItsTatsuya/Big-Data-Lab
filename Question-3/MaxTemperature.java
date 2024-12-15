@@ -18,13 +18,25 @@ public class MaxTemperature {
         @Override
         public void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
             String line = value.toString();
-            String[] parts = line.split(",");
+            String[] pairs = line.split(";"); // Split the line by semicolon
             
-            // Extract year and temperature
-            String year = parts[0];
-            int temperature = Integer.parseInt(parts[1]);
-            
-            context.write(new Text(year), new IntWritable(temperature));
+            for (String pair : pairs) {
+                pair = pair.trim(); // Remove leading/trailing spaces
+                
+                // Split the pair by space to get year and temperature
+                String[] parts = pair.split(" ");
+                
+                if (parts.length == 2) {
+                    try {
+                        String year = parts[0];
+                        int temperature = Integer.parseInt(parts[1]);
+                        context.write(new Text(year), new IntWritable(temperature));
+                    } catch (NumberFormatException e) {
+                        // Handle the case where temperature is not an integer
+                        System.err.println("Invalid temperature value: " + parts[1]);
+                    }
+                }
+            }
         }
     }
     
